@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Messages:
+    1.Brownie point implementations:
+      -added success modal
+      -stored response in local storage 
+    1.Javascript validation doesn't work. So used patterns
+    2.Data is logged in console but cannot be viewed since the submit button opens the next page
+    -->
+    <div id="head">
+      <p id="head1">MERCHANDISE SIGNING</p>
+      <p id="head2">Music Club,BITS Pilani</p>
+      <p id="head3">Registration form</p>
+   </div>
+   <div id="f">
+   <form id="form" action="page2.html" name="myForm" onsubmit="return validateForm()" method="post">
+        <div class="fields" id="n">
+            <label for="name">
+            Name :</label> <input type="text" id="name" name="fname" placeholder="Enter your name here" minlength="5" maxlength="50" required>&nbsp;<span class="error"></span>
+        </div>
+        <div class="fields" id="eid">
+            <label for="emailid">
+            Email ID :</label> <input type="email" id="emailid" name="feid" placeholder="Enter your email address here" required>
+        </div>
+        <div class="fields" id="no">
+            <label for="num">
+            Phone Number :</label> <input type="text" id="num" name="fnum" placeholder="Enter your phone number here" pattern="[1-9]{1}[0-9]{9}"required>&nbsp;<span class="error"></span>
+        </div>
+        <div class="fields" id="b">
+            <label for="bid">
+           BITS ID : </label> <input type="text" id="bid" placeholder="Enter your BITS ID here" name="bid" pattern="[0-9]{4}[A,B,a,b,1-7]{2}[P,p]{1}[S,s]{1}[0-9]{4}[P,p,G,g,H,h]{1}" required>
+        </div>
+        <div class="fields" id="hst">
+           Hostel : <select id="hostel" required>
+                   <option value="" id="cyh">Choose your hostel</option>
+                   <option value="meera">Meera</option>
+                   <option value="budh">Budh</option>
+                   <option value="ram">Ram</option>
+                   <option value="gandhi">Gandhi</option>
+                   <option value="krishna">Krishna</option>
+                   <option value="sr">SR</option>
+                   <option value="vk">VK</option>
+                   <option value="shankar">Shankar</option>
+                   <option value="vyas">Vyas</option>
+                   <option value="rp">RP</option>
+                   </select>
+        </div>
+        <div class="fields" id="size">
+            Select your size :
+            <div class="s"><input type="radio" value="XS" name="size" required>XS</div>
+            <div class="s"><input type="radio" value="S" name="size" required>S</div>
+            <div class="s"><input type="radio" value="M" name="size" required>M</div>
+            <div class="s"><input type="radio" value="L" name="size" required>L</div>
+            <div class="s"><input type="radio" value="XL" name="size" required>XL</div>
+            <div class="s"><input type="radio" value="XXL" name="size" required>XXL</div>
+            <div class="s"><input type="radio" value="XXXL" name="size" required>XXXL</div>
+        </div>
+        <div class="fields" id="tc">
+            <p id="tct"><a href="#" id="ch">Click here</a> to read the terms and conditions</p>
+            <div class="t"><input type="checkbox" value="Agreed" id="agreement" required >I agree</div>
+            <div class="t"><input type="checkbox" value="Not Agreed" id="agreement1">I do not agree</div>
+        </div>
+        <div class="fields" id="submit">
+            <input class="button" type="submit" value="Submit">
+            <input class="button" type="reset" value="Reset">
+        </div>
+    </form>
+    </div>
+</body>
+<script>
+    function seterror(id,error){
+        element = document.getElementById(id);
+        element.getElementsByClassName('error')[0].innerHTML = error;
+    }
+    function validateForm(){
+        var returnval = true;
+        var name = document.forms["myForm"]["fname"].value;
+        if(name.length<5)
+        {
+            seterror("name", "*Name is too short");
+            returnval= false;
+        }
+        if(name.length>50)
+        {
+            seterror("name", "*Name is too long");
+            returnval= false;
+        }
+        console.log(name);
+        var eid = document.forms["myForm"]["feid"].value;
+        console.log(eid);
+        var num = document.forms["myForm"]["fnum"].value;
+        if(num.length !=10)
+        {
+            seterror("num", "*Invalid Number");
+            returnval= false;
+        }
+        if(isNaN(num))
+        {
+            seterror("num", "*Invalid Number");
+            returnval= false;
+        }
+        console.log(num);
+        var bid = document.forms["myForm"]["bid"].value;
+        console.log(bid);
+        var size = document.forms["myForm"]["size"].value;
+        console.log(size);
+        var hostel = document.forms["myForm"]["hostel"].value;
+        console.log(hostel);
+        var agreement = document.forms["myForm"]["agreement"].value;
+        console.log(agreement);
+        localStorage.setItem("Name", name);
+        localStorage.setItem("Email ID",eid);
+        localStorage.setItem("Phone Number",num);
+        localStorage.setItem("BITS ID",bid);
+        localStorage.setItem("Hostel",hostel);
+        localStorage.setItem("Size",size);
+        localStorage.setItem("Agreement to terms and conditions",agreement);
+
+        return returnval;
+    }
+</script>
+</html>

@@ -1,0 +1,341 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body
+{
+    background-color:#DBF5F0;
+}
+#head
+{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    color:#0C6170;
+}
+#head1
+{
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+#head2
+{
+    font-size: 1.8rem;
+    font-weight: 550;
+}
+#head3
+{
+    font-size: 1.5rem;
+    font-weight: 550;
+}
+#f
+{
+    height: 810px;
+    width: 90%;
+    position: absolute;
+    left: 5%;
+    background-color:#A4E5E0 ;
+    border: 1px solid #0C6170 ;
+    border-radius: 10px;
+}
+#form
+{
+    height: 810px;
+    width: 100%;
+    font-size: 1.3rem;
+    color:#0C6170;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 10px;
+    align-items: center;
+}
+.fields
+{
+    background-color:#DBF5F0 ;
+    width: 97%;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+    padding-left: 20px;
+    align-items: center;
+
+}
+#n input,#eid input,#no input,#b input,#hst select
+{
+    margin-left: 10px;
+    width: 50%;
+    height: 78%;
+    border-radius: 5px;
+    border-width: 0.5px;
+    padding: 2px;
+    padding-left: 5px;
+}
+#cyh
+{
+    color: darkgray;
+}
+
+#size
+{
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: space-evenly;
+}
+.s 
+{
+    display: flex;
+    column-gap: 10px;
+}
+#tc
+{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    justify-content: space-evenly;
+}
+.t
+{
+    display: flex;
+    column-gap: 10px;
+}
+#ch
+{
+    text-decoration: none;
+    color:#0C6170 ;
+    font-weight: bold;
+}
+
+#ch:hover
+{
+    text-decoration: underline;
+}
+#submit
+{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    align-self: flex-end;
+    margin-right: 7px;
+    border-radius: 10px;
+    padding-right: 20px;
+    column-gap: 10px;
+}
+.button
+{
+    height: 80%;
+    width: 50%;
+    background-color: white ;
+    border-radius: 20px;
+    font-size: 1.2rem;
+}
+span
+{
+    font-size: 1rem;
+    color: red;
+}
+
+@media (max-width: 900px)
+{
+    .fields
+    {
+        width: 95%;
+    }
+}
+@media (max-width: 550px)
+{
+    .fields
+    {
+        width: 92%;
+    }
+    .button
+    {
+        width: 45%;
+        font-size: 1rem;
+    }
+    
+}
+@media (max-width: 550px)
+{
+    
+    #head1
+    {
+      font-size: 2rem;
+    }
+    #head2
+    {
+        font-size: 1.5rem;
+    }
+    #head3
+    {
+        font-size: 1.2rem;
+    }
+    #form
+    {
+        font-size: 1rem;
+    }
+
+    .button
+    {
+        font-size: 0.7rem;
+    }
+    input::placeholder
+    {
+        font-size: 0.8rem;
+    }
+    #eid input,#no input,#b input,#hst select
+    {
+     width: 65%;
+    }
+}
+@media (max-width: 350px)
+{
+    #head1
+    {
+      font-size: 1.5rem;
+    }
+    #head2
+    {
+        font-size: 1.2rem;
+    }
+    #head3
+    {
+        font-size: 1rem;
+    }
+    #form
+    {
+        font-size: 0.8rem;
+    }
+    .button
+    {
+        font-size: 0.7rem;
+        width: 65%;
+        height: 75%;
+    }
+    #submit
+    {
+        width: 50%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    input::placeholder
+    {
+        font-size: 0.6rem;
+    }
+    select
+    {
+        font-size: 0.6rem;
+    }
+   
+}
+@media (max-width:275px)
+{
+    #head
+    {
+        height: 150px;
+    }
+    #head1
+    {
+        font-size: 1.3rem;
+    }
+    #head2
+    {
+        font-size: 1rem;
+    }
+    #head3
+    {
+        font-size: 0.8rem;
+    }
+    .fields
+    {
+        width: 88%;
+        height: 30px;
+        padding-left: 10px;
+    }
+    #form,#f
+    {
+        height: 650px;
+    }
+    #form
+    {
+        font-size: 0.5rem;
+    }
+    #n input,#eid input,#no input,#b input,#hst select
+    {
+        height: 68%;
+        margin-left: 5px;
+    }
+    input::placeholder
+    {
+        font-size: 0.5rem;
+    }
+    select
+    {
+        font-size: 0.5rem;
+    }
+   
+    #size
+    {
+        height: 280px;
+    }
+    #no input
+    {
+        width: 58%;
+    }
+    .button
+    {
+        font-size: 0.6rem;
+    }
+}
+@media (max-width:235px)
+{
+   #head1
+   {
+    font-size: 1rem;
+   }
+   #head2
+   {
+    font-size: 0.9rem;
+   }
+   #head3
+   {
+    font-size: 0.7rem;
+   }
+   #form
+   {
+    font-size: 0.4rem;
+   }
+   input::placeholder
+   {
+    font-size: 0.4rem;
+   }
+   .button
+   {
+    font-size:0.5rem ;
+   }
+}
+
+@media (max-width:175px)
+{
+   #head1
+   {
+    font-size: 0.9rem;
+   }
+   #head2
+   {
+    font-size: 0.8rem;
+   }
+   #head3
+   {
+    font-size: 0.6rem;
+   }
+}
